@@ -7,6 +7,6 @@ public class Show {
     private Date createdOn;
     private Date startTime;
     private Date endTime;
-    private CinemaHall palyedAt;
+    private CinemaHall playedAt;
     private Movie movie;
 }
