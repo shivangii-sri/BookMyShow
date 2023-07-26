@@ -27,11 +27,8 @@ public class BaseEntity {
     private Instant createdAt;
 
     @LastModifiedDate
-    @Column(name = "created_at" , updatable = false)
+    @Column(name = "updated_at" , updatable = false)
     private Instant updatedAt;
-
-    @Column(name = "version")
-    private Integer version = 0;
 
     @Column(name = "deleted_at")
     private Instant deletedAt;
