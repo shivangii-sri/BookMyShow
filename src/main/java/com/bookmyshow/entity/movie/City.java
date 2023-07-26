@@ -14,5 +14,4 @@ public class City extends BaseEntity {
     private String state;
     private String zipCode;
 
-
 }
