@@ -1,11 +1,19 @@
 package com.bookmyshow.entity.movie;
 
-import com.bookmyshow.entity.users.Admin;
+import com.bookmyshow.entity.common.BaseEntity;
+import com.bookmyshow.entity.users.Person;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 import java.util.List;
 
-public class Movie {
+@Data
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@Table(name = "movie")
+public class Movie extends BaseEntity {
 
     private String title;
     private String decription;
@@ -14,8 +22,12 @@ public class Movie {
     private Date releaseDate;
     private String country;
     private String genre;
-    private Admin movieAddedBy;
 
+    @OneToOne
+    @JoinColumn(name = "admin_id")
+    private Person movieAddedBy;
+
+    @OneToMany(mappedBy = "movie",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Show> shows;
 
 }
