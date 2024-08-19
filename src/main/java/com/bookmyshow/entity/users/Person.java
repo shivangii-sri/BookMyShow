@@ -14,7 +14,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "person")
-public abstract class Person extends BaseEntity {
+public class Person extends BaseEntity {
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL , orphanRemoval = true)
